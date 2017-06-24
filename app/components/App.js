@@ -1,5 +1,5 @@
- var React = require('react');
-var Popular = require('./Popular');
+import React from "react";
+import Popular from "./Popular.js"
 
 // components: UI, state, lifecycle events
 
