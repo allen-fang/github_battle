@@ -15,6 +15,11 @@ a {
 	color: #d0021b;
 }
 
+.row {
+	display: flex;
+	justify-content: space-around;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
