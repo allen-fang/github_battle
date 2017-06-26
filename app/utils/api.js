@@ -14,7 +14,7 @@ function getProfile(username) {
 }
 
 function getRepos(username) {
-	return Axios.get("https://api.github.com/users/" + username + "/repos" + "&per_page=100")
+	return Axios.get("https://api.github.com/users/" + username + "/repos")
 }
 
 function getStarCount(repos) {
@@ -56,13 +56,13 @@ function sortPlayers(players){
 	})
 }
 
-export default function battle(players) {
+export function battle(players) {
 	return Axios.all(players.map(getUserData))
 		.then(sortPlayers)
 		.catch(handleError)
 }
 
-export default function fetchPopularRepos(language) {
+export function fetchPopularRepos(language) {
 	var encodedURI = window.encodeURI('https://api.github.com/search/repositories?q=stars:>1+language:' + language + '&sort=stars&order=desc&type=Repositories');
 	// will return a promise
 	return Axios.get(encodedURI)
